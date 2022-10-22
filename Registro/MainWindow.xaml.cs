@@ -35,10 +35,17 @@ namespace Registro
 
         private void btnVisualizza_Click(object sender, RoutedEventArgs e)
         {
+            lstVisualizza.Items.Clear(); //svuota la listbox
             foreach(Alunno a in classe)
             {
                 lstVisualizza.Items.Add(a.Stampa());
             }
+        }
+
+        private void btnElimina_Click(object sender, RoutedEventArgs e)
+        {
+            classe.RemoveAt(0);
+            lstVisualizza.Items.Clear();
         }
     }
     class Alunno
